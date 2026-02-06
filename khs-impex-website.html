@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHS Impex Pvt Ltd - Manufacturing Excellence from India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #d4a574;
+            --accent-dark: #b8894f;
+            --light: #f8f6f3;
+            --gray: #6b6b6b;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--primary);
+            background: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .serif {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 246, 243, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.03em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 85vh;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(212, 165, 116, 0.08) 0%, transparent 50%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 4rem;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .stat-item {
+            border-left: 3px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            color: var(--primary);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-tag {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-card {
+            padding: 2rem;
+            background: var(--white);
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-card p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .about-image {
+            position: relative;
+            height: 600px;
+            background: var(--gradient);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: 'Quality Manufacturing';
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--white);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: var(--light);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-icon {
+            padding: 3rem;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-icon::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .product-icon svg {
+            width: 100px;
+            height: 100px;
+            stroke: var(--accent);
+            stroke-width: 1.5;
+            fill: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 2.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .product-info p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .product-features li {
+            padding: 0.6rem 0;
+            color: var(--gray);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .product-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Capabilities Section */
+        .capabilities {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .capabilities .section-tag {
+            color: var(--accent);
+        }
+
+        .capabilities .section-title {
+            color: var(--white);
+        }
+
+        .capabilities .section-description {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .capability-item {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(212, 165, 116, 0.1);
+            transition: width 0.4s ease;
+            z-index: 0;
+        }
+
+        .capability-item:hover::before {
+            width: 100%;
+        }
+
+        .capability-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .capability-item h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .capability-item p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Technology Section */
+        .technology {
+            background: var(--light);
+        }
+
+        .tech-feature {
+            padding: 4rem;
+            background: var(--white);
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-feature::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--accent);
+        }
+
+        .tech-feature:nth-child(even) {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .tech-feature:nth-child(even) .tech-visual {
+            order: 2;
+        }
+
+        .tech-visual {
+            height: 300px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .tech-visual::after {
+            content: attr(data-label);
+            position: absolute;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+        }
+
+        .tech-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .tech-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .tech-benefits {
+            list-style: none;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .tech-benefits li {
+            padding: 1rem 1.5rem;
+            background: var(--light);
+            border-left: 3px solid var(--accent);
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--white);
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .reason-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--light);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+        }
+
+        .reason-card:hover::before {
+            height: 5px;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .reason-number {
+            font-size: 3.5rem;
+            color: var(--accent);
+            opacity: 0.3;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .reason-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .reason-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact .section-tag {
+            color: var(--accent);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact .section-description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-item {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+        }
+
+        .contact-item h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-top: 0.5rem;
+        }
+
+        .contact-cta {
+            margin-top: 4rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .about-grid,
+            .tech-feature,
+            .tech-feature:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-feature:nth-child(even) .tech-visual {
+                order: 1;
+            }
+
+            .product-grid,
+            .reasons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: auto;
+                padding: 4rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .product-grid,
+            .reasons-grid,
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span>KHS</span> IMPEX
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="serif">Manufacturing<br>Excellence from India</h1>
+            <p class="subtitle">We specialize in export manufacturing of high-quality knitted products for global markets, delivering consistency, customization, and compliance.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Export Oriented</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Product Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Global</div>
+                    <div class="stat-label">Market Reach</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <div class="section-tag">Who We Are</div>
+            <h2 class="section-title serif">About KHS Impex</h2>
+            <p class="section-description">Export-oriented manufacturing excellence based in Noida, India, serving international buyers with commitment to quality and consistency.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-content">
+                <p>KHS Impex Pvt. Ltd. is an export-oriented manufacturing company specializing in knitted home furnishing products, knitted apparel, and knitted shoe uppers. With over 25 years of industry experience, we are based in Noida, India, and serve international buyers with a strong commitment to quality compliance, consistent production, and long-term partnerships.</p>
+                
+                <p>With extensive experience in handling buyer-specific requirements, we focus on manufacturing products that meet global quality standards, offering flexibility in design, materials, and packaging to suit diverse export markets.</p>
+
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <h4>Quality Compliance</h4>
+                        <p>AQL standards and buyer-specific quality requirements followed</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Global Standards</h4>
+                        <p>Manufacturing products for international export markets</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Custom Solutions</h4>
+                        <p>Flexibility in design, materials, and packaging</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Long-term Partnership</h4>
+                        <p>Committed to building lasting business relationships</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="section-header">
+            <div class="section-tag">What We Make</div>
+            <h2 class="section-title serif">Product Categories</h2>
+            <p class="section-description">Comprehensive range of knitted products manufactured to global quality standards</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1: Home Furnishing -->
+            <div class="product-card fade-in">
+                <div class="product-icon">
+                    <svg viewBox="0 0 100 100">
+                        <rect x="10" y="30" width="80" height="50" rx="3"/>
+                        <line x1="20" y1="30" x2="20" y2="80"/>
+                        <line x1="80" y1="30" x2="80" y2="80"/>
+                        <line x1="50" y1="20" x2="50" y2="90"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="serif">Knitted Home Furnishing</h3>
+                    <p>Complete range of knitted home textile products suitable for retail, hospitality, and export markets.</p>
+                    <ul class="product-features">
+                        <li>Pillow & Cushion Covers</li>
+                        <li>Blankets & Throws</li>
+                        <li>Baby Bedding Products</li>
+                        <li>Kitchen Towels (Knitted)</li>
+                        <li>Soft hand feel</li>
+                        <li>Color fastness controlled</li>
+                        <li>Custom GSM & Designs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 2: Knitted Apparel -->
+            <div class="product-card fade-in">
+                <div class="product-icon">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M 30,20 L 40,15 L 50,20 L 60,15 L 70,20 L 70,80 L 30,80 Z"/>
+                        <line x1="50" y1="20" x2="50" y2="50"/>
+                        <path d="M 30,30 Q 25,40 30,50"/>
+                        <path d="M 70,30 Q 75,40 70,50"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="serif">Knitted Apparel</h3>
+                    <p>Wide range of knitted garments for men, women, and kids, suitable for casual, lifestyle & daily wear segments.</p>
+                    <ul class="product-features">
+                        <li>T-Shirts (Round, V-Neck, Polo)</li>
+                        <li>Pullovers & Cardigans</li>
+                        <li>Mufflers & Scarves</li>
+                        <li>Leggings & Turtle Necks</li>
+                        <li>Cotton & Cotton Blends</li>
+                        <li>Polyester & Lycra Blends</li>
+                        <li>Organic Cotton Available</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 3: Flyknit Shoe Upper -->
+            <div class="product-card fade-in">
+                <div class="product-icon">
+                    <svg viewBox="0 0 100 100">
+                        <ellipse cx="50" cy="50" rx="35" ry="20"/>
+                        <path d="M 20,45 Q 30,30 50,30 Q 70,30 80,45"/>
+                        <line x1="30" y1="40" x2="30" y2="55"/>
+                        <line x1="50" y1="35" x2="50" y2="55"/>
+                        <line x1="70" y1="40" x2="70" y2="55"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="serif">Knitted Shoe Upper</h3>
+                    <p>Advanced Flyknit technology for lightweight, durable, and sustainable footwear solutions.</p>
+                    <ul class="product-features">
+                        <li>Seamless Uppers</li>
+                        <li>Performance Sneakers</li>
+                        <li>Casual & Lifestyle Footwear</li>
+                        <li>Work & Safety Shoes</li>
+                        <li>Zero-Waste Knitting</li>
+                        <li>Recycled & Bio-Based Yarns</li>
+                        <li>GRS-Certified Options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="capabilities">
+        <div class="section-header">
+            <div class="section-tag">Our Capabilities</div>
+            <h2 class="section-title serif">Manufacturing Excellence</h2>
+            <p class="section-description">Complete in-house and partner capabilities for end-to-end production</p>
+        </div>
+
+        <div class="capabilities-grid">
+            <div class="capability-item fade-in">
+                <h4>In-house Knitting</h4>
+                <p>Advanced knitting facilities with precision control over fabric quality, GSM, and design specifications.</p>
+            </div>
+            <div class="capability-item fade-in">
+                <h4>Dyeing & Processing</h4>
+                <p>Partner facilities for professional dyeing and fabric processing to achieve consistent color and finish.</p>
+            </div>
+            <div class="capability-item fade-in">
+                <h4>Cutting & Stitching</h4>
+                <p>Precision cutting and expert stitching capabilities for perfect product assembly and finish.</p>
+            </div>
+            <div class="capability-item fade-in">
+                <h4>Printing Solutions</h4>
+                <p>Screen, puff, and pigment printing through trusted partners for customized designs.</p>
+            </div>
+            <div class="capability-item fade-in">
+                <h4>Embroidery</h4>
+                <p>Professional embroidery services via partners for enhanced product aesthetics and branding.</p>
+            </div>
+            <div class="capability-item fade-in">
+                <h4>Quality Assurance</h4>
+                <p>Raw material inspection, in-process checks, and final inspection as per AQL standards.</p>
+            </div>
+            <div class="capability-item fade-in">
+                <h4>Finishing & Packing</h4>
+                <p>Professional finishing and custom packaging solutions tailored to buyer requirements.</p>
+            </div>
+            <div class="capability-item fade-in">
+                <h4>OEM Services</h4>
+                <p>Design & development, private label manufacturing, and bulk order capability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="section-header">
+            <div class="section-tag">Innovation</div>
+            <h2 class="section-title serif">Advanced Technology</h2>
+            <p class="section-description">Cutting-edge Flyknit technology for superior footwear solutions</p>
+        </div>
+
+        <div class="tech-feature fade-in">
+            <div class="tech-visual" data-label="SEAMLESS"></div>
+            <div class="tech-content">
+                <h3 class="serif">Seamless Construction</h3>
+                <p>Our advanced Flyknit technology eliminates the need for excessive stitching, creating seamless uppers that enhance flexibility, comfort, and overall shoe performance.</p>
+                <ul class="tech-benefits">
+                    <li>Enhanced flexibility</li>
+                    <li>Superior comfort</li>
+                    <li>Reduced production waste</li>
+                    <li>Better breathability</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-feature fade-in">
+            <div class="tech-visual" data-label="PRECISION"></div>
+            <div class="tech-content">
+                <h3 class="serif">Precision Engineering</h3>
+                <p>Different knit zones engineered for specific purposes - breathability where needed, flexibility in movement areas, and reinforcement in high-stress zones.</p>
+                <ul class="tech-benefits">
+                    <li>Zone-specific performance</li>
+                    <li>Optimized breathability</li>
+                    <li>Targeted reinforcement</li>
+                    <li>Custom flexibility</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-feature fade-in">
+            <div class="tech-visual" data-label="ECO"></div>
+            <div class="tech-content">
+                <h3 class="serif">Sustainable Manufacturing</h3>
+                <p>Committed to environmental responsibility through zero-waste knitting processes and eco-friendly material options including GRS-certified recycled polyester and organic cotton.</p>
+                <ul class="tech-benefits">
+                    <li>Zero-waste production</li>
+                    <li>Recycled materials</li>
+                    <li>GRS certification available</li>
+                    <li>Reduced carbon footprint</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="section-header">
+            <div class="section-tag">Why Partner With Us</div>
+            <h2 class="section-title serif">Our Commitment</h2>
+            <p class="section-description">Building long-term partnerships through quality, reliability, and flexibility</p>
+        </div>
+
+        <div class="reasons-grid">
+            <div class="reason-card fade-in">
+                <div class="reason-number">01</div>
+                <h4>Consistent Quality</h4>
+                <p>Rigorous quality control at every stage ensures products meet international standards and buyer specifications consistently.</p>
+            </div>
+            <div class="reason-card fade-in">
+                <div class="reason-number">02</div>
+                <h4>Competitive Pricing</h4>
+                <p>Efficient manufacturing processes and strategic partnerships enable us to offer competitive pricing without compromising quality.</p>
+            </div>
+            <div class="reason-card fade-in">
+                <div class="reason-number">03</div>
+                <h4>Timely Delivery</h4>
+                <p>Strong production planning and logistics management ensure on-time delivery for all orders, small or large.</p>
+            </div>
+            <div class="reason-card fade-in">
+                <div class="reason-number">04</div>
+                <h4>Flexible MOQs</h4>
+                <p>Understanding diverse buyer needs, we offer flexible minimum order quantities to support businesses of all sizes.</p>
+            </div>
+            <div class="reason-card fade-in">
+                <div class="reason-number">05</div>
+                <h4>Customization</h4>
+                <p>Complete flexibility in design, colors, GSM, sizes, and packaging to match your specific requirements and brand identity.</p>
+            </div>
+            <div class="reason-card fade-in">
+                <div class="reason-number">06</div>
+                <h4>Long-term Partnership</h4>
+                <p>We believe in building lasting relationships, supporting your growth with reliability, transparency, and dedicated service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <div class="section-tag">Get In Touch</div>
+            <h2 class="section-title serif">Let's Work Together</h2>
+            <p class="section-description">For samples, development, export inquiries, and long-term business collaborations</p>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <h4>Email Us</h4>
+                <a href="mailto:info@khsimpex.com">info@khsimpex.com</a>
+                <p>We respond to all inquiries within 24 hours</p>
+            </div>
+            <div class="contact-item">
+                <h4>Visit Our Website</h4>
+                <a href="https://www.khsimpex.com" target="_blank">www.khsimpex.com</a>
+                <p>Learn more about our products and services</p>
+            </div>
+        </div>
+
+        <div class="contact-item" style="max-width: 900px; margin: 3rem auto 0; text-align: left;">
+            <h4>Registered Address</h4>
+            <p>A-4/E, Sector-80, Noida<br>Uttar Pradesh, India<br>Pincode: 201305</p>
+        </div>
+
+        <div class="contact-cta">
+            <a href="mailto:info@khsimpex.com" class="cta-button">Email: info@khsimpex.com</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 KHS Impex Pvt Ltd. All rights reserved. | Manufacturing Excellence from India</p>
+    </footer>
+
+    <script>
+        // Smooth scroll animation on elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
