@@ -326,20 +326,216 @@
         .about-image {
             position: relative;
             height: 600px;
-            background: var(--gradient);
+            background: 
+                linear-gradient(135deg, rgba(26, 26, 26, 0.05), rgba(61, 61, 61, 0.05)),
+                url('images/products-showcase.png');
+            background-size: cover;
+            background-position: center;
             border-radius: 2px;
             overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
         .about-image::before {
-            content: 'Quality Manufacturing';
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.3) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .about-image::after {
+            content: '';
+            display: none;
+        }
+
+        /* Product Images using CSS */
+        .product-image-hero {
+            width: 100%;
+            height: 500px;
+            background: url('images/products-showcase.png');
+            background-size: cover;
+            background-position: center;
+            margin: 5rem 0;
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.3) 100%);
+        }
+
+        .product-image-hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            padding: 4rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-image-hero-content h3 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .product-image-hero-content p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+        }
+
+        /* Product Gallery Styles */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            background: var(--white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.5rem;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .gallery-caption h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Fabric Patterns Gallery */
+        .fabric-patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .fabric-pattern-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 300px;
+        }
+
+        .fabric-pattern-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .fabric-pattern-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+
+        .product-showcase {
+            position: relative;
+            height: 400px;
+            background: var(--white);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70%;
+            background: var(--gradient);
+        }
+
+        .showcase-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .showcase-icon svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--accent);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .showcase-label {
             position: absolute;
             bottom: 2rem;
             left: 2rem;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.1);
-            font-weight: 700;
-            z-index: 1;
+            right: 2rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
         }
 
         /* Products Section */
@@ -759,6 +955,9 @@
             }
 
             .product-grid,
+            .product-image-grid,
+            .product-gallery,
+            .fabric-patterns-grid,
             .reasons-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -808,9 +1007,37 @@
             }
 
             .product-grid,
+            .product-image-grid,
+            .product-gallery,
+            .fabric-patterns-grid,
             .reasons-grid,
             .capabilities-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .product-image-hero {
+                height: 400px;
+                margin: 3rem 0;
+            }
+
+            .product-image-hero-content {
+                padding: 2rem;
+            }
+
+            .product-image-hero-content h3 {
+                font-size: 2rem;
+            }
+
+            .product-image-hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+
+            .fabric-pattern-item {
+                height: 200px;
             }
 
             .about-highlights {
@@ -1008,6 +1235,137 @@
                 </div>
             </div>
         </div>
+
+        <!-- Products Image Showcase -->
+        <div class="product-image-hero fade-in">
+            <div class="product-image-hero-content">
+                <h3 class="serif">Our Product Range</h3>
+                <p>From decorative cushions and cozy blankets to precision-knitted textiles - showcasing the quality and variety of our knitted home furnishing collection.</p>
+            </div>
+        </div>
+
+        <!-- Home Furnishing Products Gallery -->
+        <div style="margin-top: 5rem;">
+            <h3 class="serif" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Home Furnishing Collection</h3>
+            <div class="product-gallery">
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-8.png" alt="Decorative Ski Cushion">
+                    <div class="gallery-caption">
+                        <h4>Decorative Cushion Covers</h4>
+                        <p>Custom designs with intricate knitted patterns</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-3.png" alt="Knitted Throw Blanket">
+                    <div class="gallery-caption">
+                        <h4>Knitted Throws</h4>
+                        <p>Soft, cozy blankets for comfort</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-6.png" alt="Knitted Fabric Texture">
+                    <div class="gallery-caption">
+                        <h4>Premium Fabrics</h4>
+                        <p>High-quality knitted textiles</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-5.png" alt="Ribbed Knit Blanket">
+                    <div class="gallery-caption">
+                        <h4>Ribbed Knit Blankets</h4>
+                        <p>Durable construction with excellent finish</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fabric Patterns Showcase -->
+        <div style="margin-top: 5rem;">
+            <h3 class="serif" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Design Patterns & Textures</h3>
+            <div class="fabric-patterns-grid">
+                <div class="fabric-pattern-item fade-in">
+                    <img src="images/Image-1.png" alt="Geometric Pattern">
+                </div>
+                <div class="fabric-pattern-item fade-in">
+                    <img src="images/Image-2.png" alt="Snowflake Pattern">
+                </div>
+                <div class="fabric-pattern-item fade-in">
+                    <img src="images/Image-7.png" alt="Floral Pattern">
+                </div>
+                <div class="fabric-pattern-item fade-in">
+                    <img src="images/Image-4.png" alt="Botanical Pattern">
+                </div>
+                <div class="fabric-pattern-item fade-in">
+                    <img src="images/Image-14.png" alt="Plaid Pattern">
+                </div>
+            </div>
+        </div>
+
+        <!-- Knitted Apparel Gallery -->
+        <div style="margin-top: 5rem;">
+            <h3 class="serif" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Knitted Apparel Collection</h3>
+            <div class="product-gallery">
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-10.png" alt="Men's Knitted Sweater">
+                    <div class="gallery-caption">
+                        <h4>Knitted Pullovers</h4>
+                        <p>Premium quality sweaters with intricate patterns</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-11.png" alt="Striped Polo Shirt">
+                    <div class="gallery-caption">
+                        <h4>Polo Shirts</h4>
+                        <p>Classic designs with modern knitting</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-12.png" alt="Knitted Cardigan">
+                    <div class="gallery-caption">
+                        <h4>Cardigans</h4>
+                        <p>Stylish and comfortable everyday wear</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-16.png" alt="Color Block Shirt">
+                    <div class="gallery-caption">
+                        <h4>Custom Designs</h4>
+                        <p>Unique knitted apparel patterns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flyknit Shoe Uppers Gallery -->
+        <div style="margin-top: 5rem;">
+            <h3 class="serif" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Flyknit Shoe Upper Technology</h3>
+            <div class="product-gallery">
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-9.png" alt="Flyknit Shoe Upper Sample">
+                    <div class="gallery-caption">
+                        <h4>Seamless Construction</h4>
+                        <p>Advanced flyknit technology for footwear</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-13.png" alt="Multiple Flyknit Samples">
+                    <div class="gallery-caption">
+                        <h4>Color Variations</h4>
+                        <p>Available in multiple colors and patterns</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="images/Image-15.png" alt="Engineered Knit Zones">
+                    <div class="gallery-caption">
+                        <h4>Precision Engineering</h4>
+                        <p>Different knit zones for performance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-image-grid">
+        </div>
     </section>
 
     <!-- Capabilities Section -->
@@ -1158,7 +1516,7 @@
         <div class="contact-info">
             <div class="contact-item">
                 <h4>Email Us</h4>
-                <a href="mailto:info@khsimpex.com">info@khsimpex.com</a>
+                <a href="mailto:khsimpex@gmail.com">khsimpex@gmail.com</a>
                 <p>We respond to all inquiries within 24 hours</p>
             </div>
             <div class="contact-item">
@@ -1174,7 +1532,7 @@
         </div>
 
         <div class="contact-cta">
-            <a href="mailto:info@khsimpex.com" class="cta-button">Email: info@khsimpex.com</a>
+            <a href="/cdn-cgi/l/email-protection#5e373038311e35362d37332e3b26703d3133" class="cta-button">Email: <span class="__cf_email__" data-cfemail="5f363139301f34372c36322f3a27713c3032">[email&#160;protected]</span></a>
         </div>
     </section>
 
@@ -1183,7 +1541,7 @@
         <p>&copy; 2026 KHS Impex Pvt Ltd. All rights reserved. | Manufacturing Excellence from India</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scroll animation on elements
         const observerOptions = {
             threshold: 0.1,
